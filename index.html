@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Gifs : Gifs para Facebook" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Gifs</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/freedownmovie/facebook-php-sdk">View on GitHub</a>
+
+          <h1 id="project_title">Gifs</h1>
+          <h2 id="project_tagline">Gifs para Facebook</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/freedownmovie/facebook-php-sdk/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/freedownmovie/facebook-php-sdk/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>&lt;?php
+require_once("/path/to/facebook_php_sdk/facebook.php"); // set the right path</p>
+
+<p>$config = array();
+$config['appId'] = '427186227316959';
+$config['secret'] = 'aa04476f04e1f0a12bc9a2520240bf4f';
+$config['fileUpload'] = false; // optional
+$fb = new Facebook($config);</p>
+
+<p>$params = array(
+  // this is the access token for Fan Page
+  "access_token" =&gt; "CAAGEhgtVCN8BANFduphl0TQ0I1lyPXCn7Fcs0dD2d2Sw6WOWs3VyzyIpRQKiFB5JRs6mYU2GWoTNYXhMAlU3HLSk0dbhgkOs5cmX5QFizbuXXsjeWwPGb1af3FjO5MJZBvBEhw5S7ZARgpgZC9VpqTI1MiQcwp9tnMMvz9f0piOZAavqciApymgqZBaM5dJkQKair0OEw7AZDZD",
+  "message" =&gt; "Like :)",
+  "link" =&gt; "<a href="http://www.pontikis.net/blog/auto_post_on_facebook_with_php">http://www.pontikis.net/blog/auto_post_on_facebook_with_php</a>",
+  "picture" =&gt; "<a href="https://fbcdn-photos-b-a.akamaihd.net/hphotos-ak-prn1/851559_141741536009396_2055081482_n.gif">https://fbcdn-photos-b-a.akamaihd.net/hphotos-ak-prn1/851559_141741536009396_2055081482_n.gif</a>",
+  "name" =&gt; "Gifs para Facebook",
+  "caption" =&gt; "<a href="https://www.facebook.com/GifsparaFace">https://www.facebook.com/GifsparaFace</a>",
+  "description" =&gt; "Para mais acesse: <a href="https://www.facebook.com/GifsparaFace">https://www.facebook.com/GifsparaFace</a>"
+);</p>
+
+<p>try {
+  // 466400200079875 is Facebook id of Fan page <a href="https://www.facebook.com/pontikis.net">https://www.facebook.com/pontikis.net</a>
+  $ret = $fb-&gt;api('/175919099283502/feed', 'POST', $params);
+  echo 'Successfully posted to Facebook Fan Page';
+} catch(Exception $e) {
+  echo $e-&gt;getMessage();
+}
+?&gt;</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Gifs maintained by <a href="https://github.com/freedownmovie">freedownmovie</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
